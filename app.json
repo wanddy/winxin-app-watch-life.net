@@ -15,7 +15,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#296FD0",
-    "navigationBarTitleText": "守望轩",
+    "navigationBarTitleText": "个人创业圈",
     "navigationBarTextStyle": "white"
    
   },
@@ -46,8 +46,8 @@
       },
       {
         "pagePath": "pages/about/about",
-        "iconPath": "images/watch-life-logo-80.jpg",
-        "selectedIconPath": "images/watch-life-logo-80-on.jpg",
+        "iconPath": "images/icon80off.png",
+        "selectedIconPath": "images/icon80.png",
         "text": "关于"
       }
     ]

@@ -156,14 +156,14 @@ function CheckImgExists(imgurl) {
 }
 
 function GetUrlFileName(url,domain) {    
-    var filename = url.substring(url.lastIndexOf("/") + 1);
+    var filename = url.substring(url.lastIndexOf("index.php") + 1+9);
     if (filename == domain || filename =='')
     {
         filename="index";
     }
     else
     {
-        filename = filename.substring(0, filename.lastIndexOf("."));
+        filename = filename.substring(0, filename.lastIndexOf("/"));
     }
     
     return filename;

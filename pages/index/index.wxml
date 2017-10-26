@@ -15,9 +15,9 @@
 <import src="../../templates/copyright.wxml" />
 <view class="container">
   <view class="header" style="display:{{displayHeader}}">
-    <image src="../../images/logo.gif" style="height:120rpx;width:400rpx"></image>
+    <image src="../../images/logo.png" style="height:120rpx;width:400rpx"></image>
     <view>
-      守望生活, 审视自我,宁静雅致的小轩馆.
+      纯粹的个人主体创业资讯
     </view>
   </view>
 
