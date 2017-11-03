@@ -296,7 +296,17 @@ Page({
 
     })
   },
-
+  onReachBottom: function onReachBottom() {
+    //下拉刷新
+    var self = this;
+    if (!self.data.isLastPage) {
+      self.setData({
+        page: self.data.page + 1
+      });
+      console.log('当前页' + self.data.page);
+      this.fetchPostsData(self.data);
+    }
+  },
 })
 
 

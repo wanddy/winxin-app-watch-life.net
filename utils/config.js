@@ -12,8 +12,8 @@
 
 
 
-var DOMAIN = "miniapp.duapp.com/index.php";//配置域名,域名只修改此处
-var WEBSITENAME="守望轩"; //网站名称
+var DOMAIN = "ai4all.duapp.com/index.php";//配置域名,域名只修改此处
+var WEBSITENAME="个人创业圈"; //网站名称
 var ABOUTID= 6; //wordpress网站关于页面的id
 
 

@@ -81,8 +81,21 @@ Page({
     
   },
   onReachBottom: function () {
-
-    //console.log("xialajiazai");  
+    var self = this;
+    if (!self.data.isLastPage) {
+      self.setData({
+        page: self.data.page + 1
+      });
+      //console.log('当前页' + self.data.page);
+      this.fetchPostsData(self.data);
+    }
+    else {
+      wx.showToast({
+        title: '没有更多内容',
+        mask: false,
+        duration: 1000
+      });
+    }
    
   },
   onLoad: function (options) {
@@ -289,5 +302,5 @@ Page({
     wx.switchTab({
       url: url
     });
-  }
+  }  
 })
