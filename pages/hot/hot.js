@@ -41,8 +41,10 @@ Page({
     searchKey:"",
     topBarItems: [
         // id name selected 选中状态
-        { id: '1', name: '本年度最受欢迎', selected: true },
-        { id: '2', name: '最受欢迎总排行', selected: false }
+        { id: '1', name: '评论数', selected: true },
+        { id: '2', name: '浏览数', selected: false },        
+        { id: '3', name: '点赞数', selected: false },
+        { id: '4', name: '赞赏数', selected: false }
     ],
     tab: '1',
 
@@ -57,7 +59,6 @@ Page({
     })
   },
   onShareAppMessage: function () {
-
     var title = "分享“"+ config.getWebsiteName +"”的热点文章。";
     var path ="pages/hot/hot";
     return {
@@ -73,8 +74,7 @@ Page({
   },
   reload:function(e)
   {
-    var self = this;
-   
+    var self = this;   
     self.fetchPostsData(self.data);
   },
 
@@ -119,17 +119,12 @@ Page({
       mask:true
     });
     var getTopHotPostsRequest = wxRequest.getRequest(Api.getTopHotPosts(tab));
-
     getTopHotPostsRequest.then(response =>{
-
-        if (response.statusCode === 201) {
-
+        if (response.statusCode === 200) {
             self.setData({
                 showallDisplay: "block",
                 postsList: self.data.postsList.concat(response.data.map(function (item) {
                     var strdate = item.post_date
-
-
                     if (item.post_thumbnail_image == null || item.post_thumbnail_image == '') {
                         item.post_thumbnail_image = '../../images/icon128.png';
                     }
@@ -138,7 +133,6 @@ Page({
                 })),
 
             });
-
 
         } else if (response.statusCode === 404) {
             wx.showModal({
